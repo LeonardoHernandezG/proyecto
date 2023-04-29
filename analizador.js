@@ -44,6 +44,6 @@ function analizarCodigo() {
   if (errores.length > 0) {
     resultado = errores.join("\n");
   }
-  document.getElementById("variables").value = JSON.stringify(variables);
+  
   document.getElementById("errores").value = resultado;
 }
