@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Análisis de código de ensamblador</title>
   <style>
-    /* Aquí va el estilo CSS */
+    /* Estilos CSS aquí */
   </style>
 </head>
 <body>
@@ -15,20 +15,26 @@
     <section>
       <h2>Ingresar código</h2>
       <textarea id="codigo" rows="10" cols="50"></textarea>
-      <button onclick="analizarCodigo()">Analizar</button>
+      <button onclick="analizarCodigo()">Analizar código</button>
       <button onclick="insertarEjemplo()">Insertar ejemplo</button>
     </section>
     <section>
-      <h2>Resultados</h2>
-      <div id="resultado"></div>
-      <textarea id="variables" rows="10" cols="50"></textarea>
-      <textarea id="errores" rows="10" cols="50"></textarea>
+      <h2>Variables</h2>
+      <textarea id="variables" rows="10" cols="50" disabled></textarea>
+    </section>
+    <section>
+      <h2>Errores de sintaxis</h2>
+      <textarea id="errores" rows="10" cols="50" disabled></textarea>
+    </section>
+    <section>
+      <h2>Resultado</h2>
+      <p id="resultado"></p>
     </section>
   </main>
   <footer>
     <p>Derechos de autor 2023 - Mi página web</p>
   </footer>
-  <script src="assembler.js"></script>
+  <script src="analizador.js"></script>
   <script src="ejemplo.js"></script>
 </body>
 </html>

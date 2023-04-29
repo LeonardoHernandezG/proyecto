@@ -1,22 +1,25 @@
-
 function insertarEjemplo() {
-    var ejemplo = "section .data\n" +
-                  "    mensaje db 'Hola, mundo!', 0\n" +
-                  "\n" +
-                  "section .text\n" +
-                  "    global _start\n" +
-                  "\n" +
-                  "_start:\n" +
-                  "    ; Escribe el mensaje en la consola\n" +
-                  "    mov eax, 4\n" +
-                  "    mov ebx, 1\n" +
-                  "    mov ecx, mensaje\n" +
-                  "    mov edx, 13\n" +
-                  "    int 0x80\n" +
-                  "\n" +
-                  "    ; Salida del programa\n" +
-                  "    mov eax, 1\n" +
-                  "    xor ebx, ebx\n" +
-                  "    int 0x80";
-    document.getElementById("codigo").value = ejemplo;
+    const ejemplo = `
+    section .data
+        msg db 'Hola, mundo!',0
+    
+    section .text
+        global _start
+    
+    _start:
+        ; Escribir mensaje en pantalla
+        mov eax, 4 ; Número de la llamada del sistema para escribir
+        mov ebx, 1 ; Descriptor de archivo para stdout
+        mov ecx, msg ; Dirección del mensaje
+        mov edx, 13 ; Longitud del mensaje
+        int 0x80 ; Llamada al sistema para escribir en la pantalla
+    
+        ; Salida del programa
+        mov eax, 1 ; Número de la llamada del sistema para salir
+        xor ebx, ebx ; Código de retorno (0)
+        int 0x80 ; Llamada al sistema para salir
+    `;
+  
+    document.getElementById('codigo').value = ejemplo;
   }
+  
