@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Analizador de Código de Ensamblador</title>
-  </head>
-  <body>
-    <h1>Analizador de Código de Ensamblador</h1>
-    <label for="codigo">Código de Ensamblador:</label>
-    <textarea id="codigo" rows="10" cols="50"></textarea>
-    <br>
-    <button onclick="analizarCodigo()">Analizar</button>
-    <button onclick="guardarCodigo()">Guardar</button>
-    <button onclick="compartirCodigo()">Compartir</button>
-    <button onclick="descargarCodigo()">Descargar</button>
-    <button onclick="insertarCodigo()">Insertar Ejemplo</button>
-    <div id="resultado"></div>
-    <script src="analizador.js"></script>
-    <script>
-        function insertarCodigo() {
-          document.getElementById("codigo").value = "section .data\n    mensaje db 'Hola, mundo!', 0\n\nsection .text\n    global _start\n\n_start:\n    ; Escribe el mensaje en la consola\n    mov eax, 4\n    mov ebx, 1\n    mov ecx, mensaje\n    mov edx, 13\n    int 0x80\n\n    ; Salida del programa\n    mov eax, 1\n    xor ebx, ebx\n    int 0x80";
-        }
-  </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Análisis de código de ensamblador</title>
+  <style>
+    /* Aquí va el estilo CSS */
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Análisis de código de ensamblador</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Ingresar código</h2>
+      <textarea id="codigo" rows="10" cols="50"></textarea>
+      <button onclick="analizarCodigo()">Analizar</button>
+      <button onclick="insertarEjemplo()">Insertar ejemplo</button>
+    </section>
+    <section>
+      <h2>Resultados</h2>
+      <div id="resultado"></div>
+      <textarea id="variables" rows="10" cols="50"></textarea>
+      <textarea id="errores" rows="10" cols="50"></textarea>
+    </section>
+  </main>
+  <footer>
+    <p>Derechos de autor 2023 - Mi página web</p>
+  </footer>
+  <script src="analizador.js"></script>
+  <script src="ejemplo.js"></script>
+</body>
 </html>
-
