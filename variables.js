@@ -9,6 +9,8 @@ function obtenerVariables(codigo) {
       variables.push({ variable, tipo });
     }
     
+    document.getElementById("variables").value = variables;
     return variables;
+    
   }
   
