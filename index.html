@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Analizador de Código de Ensamblador</title>
+  </head>
+  <body>
+    <h1>Analizador de Código de Ensamblador</h1>
+    <label for="codigo">Código de Ensamblador:</label>
+    <textarea id="codigo" rows="10" cols="50"></textarea>
+    <br>
+    <button onclick="analizarCodigo()">Analizar</button>
+    <button onclick="guardarCodigo()">Guardar</button>
+    <button onclick="compartirCodigo()">Compartir</button>
+    <button onclick="descargarCodigo()">Descargar</button>
+    <button onclick="insertarCodigo()">Insertar Ejemplo</button>
+    <div id="resultado"></div>
+    <script src="analizador.js"></script>
+    <script>
+        function insertarCodigo() {
+          document.getElementById("codigo").value = "section .data\n    mensaje db 'Hola, mundo!', 0\n\nsection .text\n    global _start\n\n_start:\n    ; Escribe el mensaje en la consola\n    mov eax, 4\n    mov ebx, 1\n    mov ecx, mensaje\n    mov edx, 13\n    int 0x80\n\n    ; Salida del programa\n    mov eax, 1\n    xor ebx, ebx\n    int 0x80";
+        }
+  </body>
+</html>
+
